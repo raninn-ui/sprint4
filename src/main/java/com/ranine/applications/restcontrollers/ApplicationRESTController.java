@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ranine.applications.dto.ApplicationDTO;
 import com.ranine.applications.entities.Application;
 import com.ranine.applications.services.AppService;
 
@@ -22,23 +23,23 @@ public class ApplicationRESTController {
 	AppService appService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Application> getAllApps(){
+	public List<ApplicationDTO> getAllApps(){
 		return appService.getAllApps();
 	}
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
-	public Application getApplicayionById(@PathVariable("id") Long id) {
+	public ApplicationDTO getApplicayionById(@PathVariable("id") Long id) {
 		return appService.getApp(id);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public Application createApp(@RequestBody Application application) {
-	return appService.saveApp(application);
+	public ApplicationDTO createApp(@RequestBody ApplicationDTO applicationDTO) {
+	return appService.saveApp(applicationDTO);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
-	public Application updateApp(@RequestBody Application application) {
-	return appService.updateApp(application);
+	public ApplicationDTO updateApp(@RequestBody ApplicationDTO applicationDTO) {
+	return appService.updateApp(applicationDTO);
 	}
 
 	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
