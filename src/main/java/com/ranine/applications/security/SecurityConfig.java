@@ -18,13 +18,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-	/*@Bean
+	@Bean
 	public PasswordEncoder passwordEncoder () {
 		return new BCryptPasswordEncoder();
-	}*/
+	}
 
 
-	/*@Bean
+	@Bean
 	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception
 	{
 		http.authorizeHttpRequests((requests)->requests
@@ -46,7 +46,7 @@ public class SecurityConfig {
 		exception.accessDeniedPage("/accessDenied"));
 
 		return http.build();
-	}*/
+	}
 
 	/*
 	@Bean
